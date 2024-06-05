@@ -1,4 +1,4 @@
-## Homework
+# Homework 3
 
 The goal of this homework is to train a simple model for predicting the duration of a ride, but use Mage for it.
 
@@ -10,7 +10,13 @@ First, let's run Mage with Docker Compose. Follow the quick start guideline.
 
 What's the version of Mage we run? 
 
+```plain
+v0.9.70
+```
+
 (You can see it in the UI)
+
+![image_01](media/Screenshot%20from%202024-06-03%2001-20-04.png)
 
 
 ## Question 2. Creating a project
@@ -21,8 +27,10 @@ How many lines are in the created `metadata.yaml` file?
 
 - 35
 - 45
-- 55
+- **55** (answer)
 - 65
+
+![image_02](media/Screenshot%20from%202024-06-04%2012-50-54.png)
 
 ## Question 3. Creating a pipeline
 
@@ -34,8 +42,14 @@ How many records did we load?
 
 - 3,003,766
 - 3,203,766
-- 3,403,766
+- **3,403,766** (answer)
 - 3,603,766
+
+![image_03](media/Screenshot%20from%202024-06-04%2017-09-20.png)
+
+
+![image_04](media/Screenshot%20from%202024-06-04%2017-09-20.png)
+
 
 ## Question 4. Data preparation
 
@@ -66,16 +80,23 @@ What's the size of the result?
 
 - 2,903,766
 - 3,103,766
-- 3,316,216 
+- **3,316,216** (answer)
 - 3,503,766
+
+
+![image_03](media/Screenshot%20from%202024-06-04%2017-09-49.png)
+
+
+![image_03](media/Screenshot%20from%202024-06-04%2017-52-14.png)
+
 
 ## Question 5. Train a model
 
 We will now train a linear regression model using the same code as in homework 1
 
-* Fit a dict vectorizer
-* Train a linear regression with default parameres 
-* Use pick up and drop off locations separately, don't create a combination feature
+1. Fit a dict vectorizer
+2. Train a linear regression with default parameres
+3. Use pick up and drop off locations separately, don't create a combination feature
 
 Let's now use it in the pipeline. We will need to create another tranformation block, and return both the dict vectorizer and the model
 
@@ -139,25 +160,25 @@ Next, start the compose again and create a data exporter block.
 
 In the block, we
 
-* Log the model (linear regression)
-* Save and log the artifact (dict vectorizer)
+1. Log the model (linear regression)
+2. Save and log the artifact (dict vectorizer)
 
 If you used the suggested docker-compose snippet, mlflow should be accessible at `http://mlflow:5000`.
 
 Find the logged model, and find MLModel file. What's the size of the model? (`model_size_bytes` field):
 
-* 14,534
-* 9,534
-* 4,534
-* 1,534
+- 14,534
+- 9,534
+- 4,534
+- 1,534
 
 > Note: typically we do two last steps in one code block 
 
 
 ## Submit the results
 
-* Submit your results here: https://courses.datatalks.club/mlops-zoomcamp-2024/homework/hw3
-* If your answer doesn't match options exactly, select the closest one
+- Submit your results here: <https://courses.datatalks.club/mlops-zoomcamp-2024/homework/hw3>
+- If your answer doesn't match options exactly, select the closest one
 
 
 
