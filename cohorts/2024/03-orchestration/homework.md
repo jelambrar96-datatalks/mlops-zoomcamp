@@ -105,9 +105,11 @@ What's the intercept of the model?
 Hint: print the `intercept_` field in the code block
 
 - 21.77
-- 24.77
+- **24.77** (answer)
 - 27.77
 - 31.77
+
+![image_03](media/Screenshot%20from%202024-06-09%2011-53-15.png)
 
 ## Question 6. Register the model 
 
@@ -169,10 +171,12 @@ Find the logged model, and find MLModel file. What's the size of the model? (`mo
 
 - 14,534
 - 9,534
-- 4,534
+- **4,534** (answer)
 - 1,534
 
 > Note: typically we do two last steps in one code block 
+
+![image_03](media/Screenshot%20from%202024-06-09%2017-30-01.png)
 
 
 ## Submit the results
