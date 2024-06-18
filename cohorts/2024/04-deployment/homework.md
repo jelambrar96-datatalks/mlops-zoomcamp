@@ -48,7 +48,7 @@ What's the size of the output file?
 * 36M
 * 46M
 * 56M
-* 66M
+* **66M** (answer)
 
 __Note:__ Make sure you use the snippet above for saving the file. It should contain only these two columns. For this question, don't change the
 dtypes of the columns and use `pyarrow`, not `fastparquet`. 
@@ -60,6 +60,9 @@ Now let's turn the notebook into a script.
 
 Which command you need to execute for that?
 
+```bash
+python3 starter.py
+```
 
 ## Q4. Virtual environment
 
@@ -74,6 +77,9 @@ dependencies we use for the virtual env.
 
 What's the first hash for the Scikit-Learn dependency?
 
+```plain
+057b991ac64b3e75c9c04b5f9395eaf19a6179244c089afdebaad98264bff37c
+```
 
 ## Q5. Parametrize the script
 
@@ -85,12 +91,16 @@ Run the script for April 2023.
 What's the mean predicted duration? 
 
 * 7.29
-* 14.29
+* **14.29** (answer)
 * 21.29
 * 28.29
 
 Hint: just add a print statement to your script.
 
+```bash
+$ python3 starter.py --year 2023 --month 4
+14.292282936862449
+```
 
 ## Q6. Docker container 
 
@@ -129,7 +139,7 @@ for May 2023?
 
 * 0.19
 * 7.24
-* 14.24
+* **14.24** (answer)
 * 21.19
 
 
