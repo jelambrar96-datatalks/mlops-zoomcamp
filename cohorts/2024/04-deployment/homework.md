@@ -15,7 +15,7 @@ Run this notebook for the March 2023 data.
 What's the standard deviation of the predicted duration for this dataset?
 
 * 1.24
-* 6.24
+* **6.24** (answer)
 * 12.28
 * 18.28
 
