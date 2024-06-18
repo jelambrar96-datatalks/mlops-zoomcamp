@@ -1,4 +1,5 @@
 
+import os
 import argparse
 import pickle
 
@@ -47,17 +48,18 @@ if __name__ == '__main__':
 
     print(np.mean(y_pred))
 
-    # output_file = f"results_{year:04d}-{month:02d}.parquet"
-    # 
-    # df_result = df.copy()
-    # 
-    # df_result['ride_id'] = f'{year:04d}/{month:02d}_' + df.index.astype('str')
-    # df_result['y_pred'] = pd.Series(y_pred)
-    # df_result = df_result[['ride_id', 'y_pred']]
-    # 
-    # df_result.to_parquet(
-    #     output_file,
-    #     engine='pyarrow',
-    #     compression=None,
-    #     index=False
-    # )
+    OUPUT_DIR = "outputs"
+    output_file = f"{OUPUT_DIR}/results_{year:04d}-{month:02d}.parquet"
+    
+    df_result = df.copy()
+    
+    df_result['ride_id'] = f'{year:04d}/{month:02d}_' + df.index.astype('str')
+    df_result['y_pred'] = pd.Series(y_pred)
+    df_result = df_result[['ride_id', 'y_pred']]
+    
+    df_result.to_parquet(
+        output_file,
+        engine='pyarrow',
+        compression=None,
+        index=False
+    )

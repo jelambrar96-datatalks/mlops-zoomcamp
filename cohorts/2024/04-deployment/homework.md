@@ -137,11 +137,36 @@ to use the pickle file already in the image.
 Now run the script with docker. What's the mean predicted duration
 for May 2023? 
 
-* 0.19
+* **0.19** (answer)
 * 7.24
-* **14.24** (answer)
+* 14.24
 * 21.19
 
+Dockerfile content:
+
+```Dockerfile
+FROM agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim
+
+WORKDIR /app
+
+COPY ["starter.py", "."]
+COPY ["requirements.txt", "."]
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python","./starter.py"]
+```
+
+bash content:
+
+```bash
+#!/bin/bash
+
+DOCKER_IMAGE_NAME="jelambrar96/zoomcamp-model:mlops-2024-3.10.13-slim"
+
+docker build  -t $DOCKER_IMAGE_NAME .
+docker run --rm  -v $(pwd)/outputs:/app/outputs $DOCKER_IMAGE_NAME --year 2023 --month 5
+```
 
 ## Bonus: upload the result to the cloud (Not graded)
 
