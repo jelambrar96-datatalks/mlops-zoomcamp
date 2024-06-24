@@ -12,9 +12,16 @@ What is the shape of the downloaded data? How many rows are there?
 
 * 72044
 * 78537 
-* 57457
+* **57457** (answer)
 * 54396
 
+```python
+jan_data.shape
+```
+
+```plain
+(54135, 21)
+```
 
 ## Q2. Metric
 
@@ -24,6 +31,20 @@ Hint: explore evidently metric `ColumnQuantileMetric` (from `evidently.metrics i
 
 What metric did you choose?
 
+```plain
+ColumnCorrelationsMetric
+```
+
+```python
+report = Report(metrics=[
+        ColumnDriftMetric(column_name='prediction'),
+        DatasetDriftMetric(),
+        DatasetMissingValuesMetric(),
+        ColumnQuantileMetric(column_name="fare_amount", quantile=0.5),
+        ColumnCorrelationsMetric(column_name="total_amount")
+    ]
+)
+```
 
 ## Q3. Monitoring
 
@@ -33,8 +54,10 @@ What is the maximum value of metric `quantile = 0.5` on the `"fare_amount"` colu
 
 * 10
 * 12.5
-* 14.2
+* **14.2** (answer)
 * 14.8
+
+![](media/Screenshot_2024-06-23_23-24-01.png)
 
 
 ## Q4. Dashboard
@@ -46,8 +69,38 @@ Where to place a dashboard config file?
 
 * `project_folder` (05-monitoring)
 * `project_folder/config`  (05-monitoring/config)
-* `project_folder/dashboards`  (05-monitoring/dashboards)
+* `project_folder/dashboards`  **(05-monitoring/dashboards)** (answer)
 * `project_folder/data`  (05-monitoring/data)
+
+```plain
+.
+├── baseline_model_nyc_taxi_data.ipynb
+├── config
+│   ├── grafana_dashboards.yaml
+│   └── grafana_datasources.yaml
+├── dashboards
+│   └── data_drift.json ################(this is dashboard file) ####################
+├── data
+├── debugging_nyc_taxi_data.ipynb
+├── docker-compose.yml
+├── dummy_metrics_calculation.py
+├── evidently_metrics_calculation.py
+├── images
+│   ├── thumbnail-5-01.jpg
+│   ├── thumbnail-5-02.jpg
+│   ├── thumbnail-5-03.jpg
+│   ├── thumbnail-5-04.jpg
+│   ├── thumbnail-5-05.jpg
+│   ├── thumbnail-5-06.jpg
+│   ├── thumbnail-5-07.jpg
+│   └── thumbnail-5-08.jpg
+├── meta.json
+├── models
+├── README.md
+└── requirements.txt
+
+5 directories, 19 files
+```
 
 
 ## Submit the results
