@@ -139,8 +139,16 @@ In both cases we should adjust commands for localstack. What option do we need t
 
 * `--backend-store-uri`
 * `--profile`
-* `--endpoint-url`
+* **`--endpoint-url`** (answer)
 * `--version`
+
+
+```bash
+$ aws --endpoint-url=http://localhost:4566 s3 mb s3://nyc-duration
+make_bucket: nyc-duration
+$ aws --endpoint-url=http://localhost:4566 s3 ls
+2024-06-30 18:25:39 nyc-duration
+```
 
 
 ## Make input and output paths configurable
@@ -231,7 +239,7 @@ df_input.to_parquet(
 
 What's the size of the file?
 
-* 3620
+* **3620** (answer)
 * 23620
 * 43620
 * 63620
@@ -240,6 +248,11 @@ Note: it's important to use the code from the snippet for saving
 the file. Otherwise the size may be different depending on the OS,
 engine and compression. Even if you use this exact snippet, the size
 of your dataframe may still be a bit off. Just select the closest option.
+
+```bash
+$ aws --endpoint-url=http://localhost:4566 s3 ls  s3://nyc-duration --recursive --summarize
+2024-06-30 21:08:35       3620 in/2023-01.parquet
+```
 
 
 ## Q6. Finish the integration test
@@ -263,7 +276,7 @@ verify the result is correct.
 What's the sum of predicted durations for the test dataframe?
 
 * 13.08
-* 36.28
+* **36.28** (answer)
 * 69.28
 * 81.08
 
