@@ -280,6 +280,13 @@ What's the sum of predicted durations for the test dataframe?
 * 69.28
 * 81.08
 
+```bash
+$ python3 batch.py 2023 1
+s3://nyc-duration/in/2023-01.parquet
+predicted mean duration: 18.138625226015364
+predicted sum  duration: 36.27725045203073
+saving file...
+```
 
 ## Running the test (ungraded)
 
